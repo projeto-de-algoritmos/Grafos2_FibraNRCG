@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../inc/grafo.hpp"
+#include "../inc/mapa2D.hpp"
 
 int main() {
 
@@ -80,6 +81,10 @@ int main() {
     mapa.addEdge(50 , 49, 350);
 
     std::cout << "O total é: " << mapa.primAlgoritmo(32) << '\n';
+
+    Mapa2D djair;
+
+    djair.imprimeMapa();
 
   return 0;
 
