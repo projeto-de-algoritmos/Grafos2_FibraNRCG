@@ -9,6 +9,10 @@
 | -- | -- |
 | 18/0117548  |  [Bruno Carmo Nunes](https://github.com/brunocmo) |
 
+## Video
+
+https://youtu.be/urMF_XFnVng
+
 ## Sobre
 A ideia do projeto é fazer uma distribuição de fibra óptica na região do Núcleo Rural da Casa Grande.
 
@@ -59,7 +63,5 @@ Na opção 3, você pode fazer a mudança de distâncias entre os nós, onde cad
 
 Por fim a opção 0 para sair do programa.
 
-
-
-
-
+## Outros
+Quando executar o programa no CLI, use-o em tela cheia para melhor aproveitamento do mesmo.
