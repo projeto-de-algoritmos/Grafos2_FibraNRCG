@@ -12,18 +12,18 @@
 ## Sobre
 A ideia do projeto é fazer uma distribuição de fibra ótica na região do Núcleo Rural da Casa Grande.
 
-![imagem1](doc/img/mapa1.png)
+![mapa1](docs/mapa1.png)
 
 Onde pode se observar abaixo a implementação dos postes em cada esquina de ruas, fazendo então uma conexão econômica e de acesso a todos da região.
 Mostrando no final o mapa e o total de metros de cabo.
 
-![imagem2](doc/img/mapa2number.png)
+![mapa2number](docs/mapa2number.png)
 
 ## Screenshots
 
-![imagem3](doc/img/mapaCLIvazio.png)
+![mapaCLIvazio](docs/mapaCLIvazio.png)
 
-![imagem4](doc/img/mapaCLIpreenchido.png)
+![mapaCLIpreenchido](docs/mapaCLIpreenchido.png)
 
 
 ## Instalação
