@@ -52,8 +52,11 @@ Para limpar os arquivos .o e bin do programa:
 
 ## Uso
 Primeiro compile o programa com o `make` e depois execute o programa com `make run` , vai apresentar-se na tela inicial um menu, onde o usuário pode escolher imprimir o mapa, gerar o mapa com um nó inicial, fazer a mudança de distância entre os nós e limpar o mapa.
+
 Para gerar o mapa basta pressionar a opção 2 e escolher um nó do mapa. Como resultado irá a aparecer as conexõe em azul e no final o tamanho de metros da fibra óptica.
+
 Na opção 3, você pode fazer a mudança de distâncias entre os nós, onde cada mudança pode gerar um mapa diferente do que visto. Especificamente para gerar mudanças, tente reduzir as distâncias já mencionadas na imagem. Como por exemplo o nó 10 e o nó 24 pode ser reduzido para um valor de 100 metros. Com essa mudança outro mapa será gerado, com a distância no final.
+
 Por fim a opção 0 para sair do programa.
 
 
