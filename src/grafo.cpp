@@ -3,6 +3,10 @@
 Grafo::Grafo() {
     v = MAX_NO;
     adj->clear();
+    for (int i = 0; i <= v; i++)
+    {
+        noAtivo[i] = false;
+    }
 }
 
 Grafo::~Grafo() {
@@ -17,7 +21,18 @@ void Grafo::addEdge(int u, int v, int p) {
 
 int Grafo::primAlgoritmo(int no_inicial) {
 	for(int i = 1;i <= v;i++) peso[i] = INFINITO;                               // definimos todas as distâncias como infinito
-	peso[no_inicial] = 0;                                                       // primeiro vértice selecionado será o próprio no_inicial
+	peso[no_inicial] = 0;
+    noAtivo[no_inicial] = true;                                                       // primeiro vértice selecionado será o próprio no_inicial
+
+    for (int i = 0; i <= v; i++)
+    {
+        noAtivo[i] = false;
+    }
+
+    for (int i = 0; i <= MAXN; i++)
+    {
+        visitado[i] = 0;
+    }
 
 	std::priority_queue< pii, std::vector<pii>, std::greater<pii> > fila;       // cria uma fila de prioridade onde o menor fica no topo.
 	fila.push( pii(peso[no_inicial], no_inicial) );                             // coloca o primeiro elemento como seja a distância do
@@ -52,13 +67,49 @@ int Grafo::primAlgoritmo(int no_inicial) {
                                                                                 // checar se o vértice atual não foi processado ainda
 			if( peso[atual] > dist && !visitado[atual]){                        // vemos que vale a pena usar o vértice davez
 				peso[atual] = dist;                                             // atualizamos a distância
-				fila.push( pii(peso[atual], atual) );                           // inserimos na fila de prioridade
+				fila.push( pii(peso[atual], atual) );
+
+
+
 			}
 		}
+
+
+
 	}
 
 	int custo_arvore = 0;
-	for(int i = 1;i <= v;i++) custo_arvore += peso[i];
+	for(int k = 1;k <= v;k++) {
+        custo_arvore += peso[k];
+
+        for(int i = 0;i < (int)adj[k].size();i++) {
+
+			int atual = adj[k][i].second;
+
+            bool marcou{false};
+
+                for(int i = 0;i < (int)adj[atual].size();i++) {
+
+                    int dist2 = adj[atual][i].first;
+                    int atual2 = adj[atual][i].second;
+
+                    if( (peso[k] == dist2) && (k == atual2)  ) {
+
+                      linhasVisitadas(atual,atual2);
+                      marcou = true;
+                      break;
+
+                    }
+
+                }
+
+            if ( marcou ) break;
+        }
+
+        std::cout << k << " peso:" << peso[k] << '\n';
+
+
+    }
 	return custo_arvore;
 }
 
