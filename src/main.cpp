@@ -112,8 +112,15 @@ int main() {
                 std::cin.ignore();
                 break;
             case 2 :
+
+            while(true){
                 std::cout << "Digite um nó de 1 a 55 para iniciar: ";
-                std::cin >> no;
+                    std::cin >> no;
+                if(no < 1 || no > 55 )
+                std::cout << "Valor inválido!" << '\n';
+                else
+                    break;
+            }
 
                 mapa.limparMapa();
 
@@ -122,7 +129,7 @@ int main() {
 
                 std::cin.ignore();
 
-                std::cout << "A quantidade de metros de cabo necessarios é de: " << valor << '\n';
+                std::cout << "A quantidade de metros de cabo necessarios é de: " << valor << "m" << '\n';
 
                 std::cin.ignore();
                 std::cin.ignore();
@@ -131,12 +138,33 @@ int main() {
             case 3 :
 
                 std::cout << "Esse modo serve para modificar os valores de distancias dos nó conforme o mapa" << '\n';
-                std::cout << "Digite o nó 1: ";
-                std::cin >> no1;
-                std::cout << "Digite o nó 2: ";
-                std::cin >> no2;
-                std::cout << "Digite a distancia: ";
-                std::cin >> distancia;
+
+                while(true){
+                    std::cout << "Digite o nó 1: ";
+                        std::cin >> no1;
+                    if(no1 < 1 || no1 > 55 )
+                    std::cout << "Valor inválido!" << '\n';
+                    else
+                        break;
+                }
+
+                while(true){
+                    std::cout << "Digite o nó 2: ";
+                        std::cin >> no2;
+                    if(no2 < 1 || no2 > 55 )
+                    std::cout << "Valor inválido!" << '\n';
+                    else
+                        break;
+                }
+
+                while(true){
+                    std::cout << "Digite a distancia (1 - 10000): ";
+                        std::cin >> distancia;
+                    if(distancia < 0 || distancia > 10001 )
+                    std::cout << "Valor inválido!" << '\n';
+                    else
+                        break;
+                }
 
                 mapa.addEdge(no1 , no2, distancia);
 
@@ -150,7 +178,7 @@ int main() {
 
                 std::cin.ignore();
 
-                std::cout << "A quantidade de metros de cabo necessarios é dee: " << valor << '\n';
+                std::cout << "A quantidade de metros de cabo necessarios é de: " << valor << "m" << '\n';
 
                 std::cin.ignore();
                 std::cin.ignore();
